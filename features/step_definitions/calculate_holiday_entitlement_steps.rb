@@ -35,21 +35,8 @@ And ('I select the option for a full leave year') do
     click_button('Continue')
 end
 
-And ('I input 37.5 hours worked per week') do
-    expect(page).to have_content 'Number of hours worked per week?'
-    expect(page).to have_button 'Continue'
-    fill_in('response', with: '37.5')
-    click_button('Continue')
-end
-
-And ('I input 5 days worked per week') do
-    expect(page).to have_content 'Number of days worked per week?'
-    expect(page).to have_button 'Continue'
-    fill_in('response', with: '5')
-    click_button('Continue')
-end
-
 Then ('I should see the correct submitted answers') do
+    expect(page).to have_title 'Outcome - Calculate holiday entitlement - GOV.UK'
     expect(page).to have_text 'No'
     expect(page).to have_text 'hours worked per week'
     expect(page).to have_text 'for a full leave year'
