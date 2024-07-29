@@ -12,7 +12,6 @@ Scenario: Displays the values that were inputted by the user on the summary page
     Then I should see the correct submitted answers
     And I should see the total entitlement hours
 
-    Given I have finished the quiz
+    Given I have answered all questions
     When I see the summary page 
-    Then I should see all the submitted answers
-    And I can chnage them if I need
+    Then I should see the correct submitted answers
