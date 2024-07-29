@@ -12,11 +12,10 @@ Scenario: Updates calculation when value is edited
     Then I should see the correct submitted answers
     And I should see the total entitlement hours
     
-    
     Given I have answered all questions 
     And I see the summary page
-    When I click on the change link for "Number of hours worked per week?"
+    When I click on the 'Change' button next to hours worked per week
     And I input 20 hours worked per week
     And I input 4 days worked per week
-    Then I should see the correct changed answers
+    Then I should see the correct submitted answers
     And I should see the updated total entitlement hours
