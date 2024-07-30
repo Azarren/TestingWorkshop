@@ -42,7 +42,7 @@ And("I select the option shifts") do
   click_button('Continue')
 end
 
-And ('I input {int}') do |num|
+And ('I input {float}') do |num|
   expect(page).to have_button 'Continue'
   fill_in('response', with: num)
   click_button('Continue')
