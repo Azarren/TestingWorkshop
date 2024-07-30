@@ -1,3 +1,5 @@
 Then ('I recieve results in weeks') do
-    expect(page).to have_text '5.6 weeks holiday'
+    within('div.govuk-govspeak') do
+      expect(page).to have_selector('p', text: 'The statutory holiday entitlement is 5.6 weeks holiday.')
+    end
   end

@@ -8,7 +8,9 @@ end
 
 And('I see the summary page') do
   expect(page).to have_title 'Outcome - Calculate holiday entitlement - GOV.UK'
-  expect(page).to have_content 'Information based on your answers'
+  within('div.gem-c-title') do
+    expect(page).to have_selector('h1.gem-c-title__text', text: 'Information based on your answers')
+  end
 end
 
 When('I click on the change link for {string}') do |section_text|

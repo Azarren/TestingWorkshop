@@ -8,35 +8,45 @@ Then ('I restart the quiz') do
 end
 
 And("I select the option days worked per week") do
-  expect(page).to have_content 'Is the holiday entitlement based on:'
+  within('div.govuk-form-group') do
+    expect(page).to have_selector('h1.govuk-fieldset__heading', text: 'Is the holiday entitlement based on:')
+  end
   expect(page).to have_button 'Continue'
   choose('response-0', allow_label_click: true)
   click_button('Continue')
 end
 
 And("I select the option for someone starting part way through a leave year") do
-  expect(page).to have_content 'Do you want to work out holiday:'
+  within('div.govuk-form-group') do
+    expect(page).to have_selector('h1.govuk-fieldset__heading', text: 'Do you want to work out holiday:')
+  end
   expect(page).to have_button 'Continue'
   choose('response-2', allow_label_click: true)
   click_button('Continue')
 end
 
 And("I select the option annualised hours") do
-  expect(page).to have_content 'Is the holiday entitlement based on:'
+  within('div.govuk-form-group') do
+    expect(page).to have_selector('h1.govuk-fieldset__heading', text: 'Is the holiday entitlement based on:')
+  end
   expect(page).to have_button 'Continue'
   choose('response-2', allow_label_click: true)
   click_button('Continue')
 end
 
 And("I select the option for someone leaving part way through a leave year") do
-  expect(page).to have_content 'Do you want to work out holiday:'
+  within('div.govuk-form-group') do
+    expect(page).to have_selector('h1.govuk-fieldset__heading', text: 'Do you want to work out holiday:')
+  end
   expect(page).to have_button 'Continue'
   choose('response-2', allow_label_click: true)
   click_button('Continue')
 end
 
 And("I select the option shifts") do
-  expect(page).to have_content 'Is the holiday entitlement based on:'
+  within('div.govuk-form-group') do
+    expect(page).to have_selector('h1.govuk-fieldset__heading', text: 'Is the holiday entitlement based on:')
+  end
   expect(page).to have_button 'Continue'
   choose('response-4', allow_label_click: true)
   click_button('Continue')
