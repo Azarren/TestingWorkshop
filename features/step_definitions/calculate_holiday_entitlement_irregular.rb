@@ -5,11 +5,10 @@ And("I select the option yes for working irregular hours") do
   click_button('Continue')
 end
 
-And ('I input 1st of October 1998') do
-  expect(page).to have_content 'When does the leave year start?'
+And ('I input {int} of {int} {int}') do |day, month, year|
   expect(page).to have_button 'Continue'
-  fill_in('response-0', with: '1')
-  fill_in('response-1', with: '10')
-  fill_in('response-2', with: '1998')
+  fill_in('response-0', with: day)
+  fill_in('response-1', with: month)
+  fill_in('response-2', with: year)
   click_button('Continue')
 end
