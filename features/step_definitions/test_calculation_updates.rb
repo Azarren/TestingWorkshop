@@ -12,7 +12,11 @@ And('I see the summary page') do
 end
 
 When('I click on the change link for {string}') do |section_text|
-  within(:xpath, "//div[contains(@class, 'govuk-summary-list__row') and .//dt[contains(text(), '#{section_text}')]]") do
+  section = all('div.govuk-summary-list__row').find do |div|
+    div.has_css?('dt.govuk-summary-list__key', text: section_text)
+  end
+
+  within(section) do
     find('a.govuk-link', text: 'Change').click
   end
 end
