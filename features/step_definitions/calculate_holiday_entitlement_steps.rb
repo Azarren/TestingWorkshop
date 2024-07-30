@@ -28,20 +28,20 @@ And ('I select the option hours worked per week') do
     click_button('Continue')
 end
 
-And ('I select the option for a full leave year') do
-    expect(page).to have_content 'Do you want to work out holiday:'
+And ('I select the option for a {string} full leave year') do |text|
+    expect(page).to have_content 'Do you want to ' + text + ' holiday:'
     expect(page).to have_button 'Continue'
     choose('response-0', allow_label_click: true)
     click_button('Continue')
 end
 
-Then ('I should see the correct submitted answers') do
+Then ('I should see the answers {string} {string} {string} {float} {int}') do |answer1, answer2, answer3, answer4, answer5|
     expect(page).to have_title 'Outcome - Calculate holiday entitlement - GOV.UK'
-    expect(page).to have_text 'No'
-    expect(page).to have_text 'hours worked per week'
-    expect(page).to have_text 'for a full leave year'
-    expect(page).to have_text '37.5'
-    expect(page).to have_text '5.0'
+    expect(page).to have_text answer1
+    expect(page).to have_text answer2
+    expect(page).to have_text answer3
+    expect(page).to have_text answer4
+    expect(page).to have_text answer5
 end
 
 And ('I should see the total entitlement hours') do
