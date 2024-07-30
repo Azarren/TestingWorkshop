@@ -10,7 +10,7 @@ Scenario: Error message recieved when entering non-numbers for hours worked per 
     Then I will see an error message
 
 Scenario: Error message recieved when entering non-numbers for hours worked per week
-      Given I navigate to the homepage
+  Given I navigate to the homepage
     When I click on the 'Start now' button
     And I select the option no for working irregular hours
     And I select the option hours worked per week
