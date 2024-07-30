@@ -7,5 +7,5 @@ Scenario: Displays error when the user does not select a mandatory field
     And I select the option yes for working irregular hours
     And I leave the date for year leave started blank 
     And I click the continue button 
-    Then I should see an error message 'Please answer this question' 
+    Then I will see an error message "There are only 7 days in a week. Please check and enter a correct value."
     And input fields should be highlighted in red

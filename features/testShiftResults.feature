@@ -7,6 +7,6 @@ Given I navigate to the homepage
     And I select the option shifts
     And I select the option for a "calculate the" full leave year
     And I input 5
-    And I input 5
-    And I input 5
+    And I input int 5
+    And I input int 5
     Then I recieve results in shifts
