@@ -24,7 +24,7 @@ end
 And("I select the option annualised hours") do
   expect(page).to have_content 'Is the holiday entitlement based on:'
   expect(page).to have_button 'Continue'
-  choose('response-3', allow_label_click: true)
+  choose('response-2', allow_label_click: true)
   click_button('Continue')
 end
 
