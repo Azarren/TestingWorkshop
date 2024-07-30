@@ -10,8 +10,8 @@ Scenario: Calculate the correct holiday entitlement for an employee who works re
     When I click on the 'Start now' button
     And I select the option no for working irregular hours
     And I select the option hours worked per week
-    And I select the option for a full leave year
+    And I select the option for a "work out" full leave year
     And I input 37.5 hours worked per week
     And I input 5 days worked per week
-    Then I should see the correct submitted answers
+    Then I should see the answers "No" "hours worked per week" "for a full leave year" 37.5 5
     And I should see the total entitlement hours
